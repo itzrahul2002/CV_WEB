@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV or Remuse Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+        *
+        { 
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        body
+        {
+            background: rgb(230, 115, 115);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height:100vh;
+        }
+        .container
+        {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            min-height: 1000px;
+            background: #fff;
+            margin:50px;
+            display: grid;
+            grid-template-columns: 1fr 2fr ;
+            box-shadow: 0 35px 55px rgba(211, 68, 68, 0.1);
+        }
+        .container .left_Side
+        {
+            position: relative;
+            background: #800b0d;
+            padding: 40px;
+        }
+        .profileText
+        {
+            position: relative;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(179, 46, 46, 0.2);
+        }
+        .profileText .imgBx
+        {
+            position:relative;
+            width: 200px;
+            height:200px;
+            border-radius: 50%;
+            overflow:hidden;
+
+        }
+        .profileText .imgBx img
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profileText h2
+        {
+            color: #fff;
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.4em;
+        }
+        .profileText h2 span
+        {
+            font-size: 0.8em;
+            font-style: 300;
+        }
+        .contactInfo
+        {
+            padding-top: 40px ;
+        }
+        .title
+        {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+
+        }
+
+        .contactInfo ul
+        {
+        position: relative;
+        }
+        .contactInfo ul li
+        {
+        position: relative;
+        list-style: none;
+        margin: 10px 0;
+        cursor: pointer;
+        }
+        .contactInfo ul li .icon
+        {
+            display: inline-block;
+            width: 30px;
+            font-size: 18px;
+            color: #e37b7d;
+        }
+        .contactInfo ul li span
+        {
+            color: #fff;
+            font-weight: 300;
+        }
+        .contactInfo.education li
+        {
+        margin-bottom: 15px;
+
+        }
+        .contactInfo.education h5
+        {
+            color: rgb(241, 141, 141);
+            font-weight: 500;
+        }
+        .contactInfo.education h4
+        {
+            color: rgb(252, 248, 248);
+            font-weight: 500;
+        }
+        .contactInfo.education h4:nth-child(2)
+        {
+        color: #fff;
+        font-weight: 300;
+        }
+        .contactInfo.language .percent
+        {
+            position: relative;
+            width: 100%;
+            height: 6px;
+            background: #f18384;
+            display: block;
+            margin-top: 5px;
+        }
+        .contactInfo.language .percent div
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #620305;
+        }
+        .container .right_Side
+        {
+            position: relative;
+            background: #fff;
+            padding: 40px;
+        }
+        .about 
+        {
+            margin-bottom: 50px;
+
+        }
+        .about:last-child
+        {
+            margin-bottom: 0;
+        }
+        .title2
+        {
+            color:#003147;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        p
+        {
+            color: #333;
+        }
+        .about .box
+        {
+            display:flex ;
+            flex-direction: row;
+            margin: 20px 0;
+        }
+        .about .box .year_company
+        {
+            min-width: 150px;
+        }
+        .about .box .year_company h5
+        {
+            text-transform: uppercase;
+            color: #848c90;
+            font-weight: 600;
+        }
+        .about .box .text h4{
+            text-transform: uppercase;
+            color: rgb(148, 8, 8);
+            font-size: 16px;
+        }
+        .skills .box
+        {
+            position: relative;
+            width: 100%;
+            display:grid;
+            grid-template-columns: 150px 1fr;
+            justify-content: center;
+            align-items: center;
+        }
+        .skills .box h4
+        {
+            text-transform: uppercase;
+            color: #848c99;
+            font-weight: 500;
+
+        }
+        .skills .box .percent
+        {
+            position: relative;
+            width: 100%;
+            height: 10px;
+        background: #c1baba;
+        }
+        .skills .box .percent div 
+        {
+        position: absolute;
+        top: 0;
+        left: 00;
+        height: 100%;
+        background: rgb(148, 8, 8);
+        }
+        .interest ul{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        .interest ul li 
+        {
+            list-style: none;
+            color: #333;
+            font-weight: 500;
+            margin: 10px 0;
+        }
+        .interest ul li .fa 
+        {
+            color: #800b0d;
+            font-size: 18px;
+            width: 20px;
+        }
+        .text a{
+            text-decoration: none;
+            color: white;
+        }
+  
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left_Side">
+            <div class="profileText">
+                <div class="imgBx">
+                    <img src="Image/my3.jpg">
+                </div>
+                <h2>Rahul Thakur<br><span></span></h2>
+            </div>
+            <div class="contactInfo">
+            <h3 class="title">Contact Info</h3>
+            <ul>
+                <li>
+                    <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                    <span class="text"><a href="tel:+919560994962"  target="_blank">9650734557</a></span>
+                </li>
+                <li>
+                    <span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                    <span class="text"><a href="mailto:" style="font-size: 13px; font-weight: 500;"  target="_blank">rahulthakur95609@gmail.com</a></span>
+                </li>
+                <li>
+                    <span class="icon"><i class="fa fa-whatsapp" aria-hidden="true"></i></span>
+                    <span class="text"><a href="https://wa.me/9560994962?text=hello+123" target="_blank">9560994962</a></span>
+                </li>
+                <li>
+                    <span class="icon"><a href="https://www.linkedin.com/feed/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true" style="color: #f18384;"></i></a></span>
+                    <span class="text">www.linkedin.com</span>
+                </li>
+                <li>
+                    <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                    <span class="text">New Delhi-110034</span>
+                </li>
+            </ul>
+        </div>
+        <div class="contactInfo education">
+            <h3 class="title">EDUCATION</h3>
+            <ul>
+                <li>
+                   <!-- <h5>2021-2023</h5> -->
+                   <h4> XII <sup>th</sup> Science <br> (Non-Medical & Medical)</h4>
+                   <h4>From Govt School</h4>
+                </li>
+                <li>
+                    <h5>2021 - 2023</h5>
+                    <h4>Bachelor of Science (Bsc)</h4>
+                    <h4>At IGNOU</h4>
+                 </li>
+                 <li>
+                    <h5>2023 - Now</h5>
+                    <h4>Bachelor of Computer Applications (BCA)</h4>
+                    <h4>At IGNOU</h4>
+                 </li>
+            </ul>
+        </div>
+        <!-- <div class="contactInfo education">
+            <h3 class="title">languages</h3>
+            <ul>
+                <li>
+                   <h5>2017 - 2019</h5>
+                   <h4>HTML</h4>
+                   <h4>CSS</h4>
+                </li>
+                <li>
+                    <h5>2019 - 2021</h5>
+                    <h4>JAVASCRIPT</h4>
+                    <h4>JAVA</h4>
+                 </li>
+                 <li>
+                    <h5>2021 - Now</h5>
+                    <h4>BCA</h4>
+                    <h4>University Name</h4>
+                 </li>
+            </ul>
+        </div> -->
+
+        <div class="contactInfo language">
+            <h3 class="title">Projects <span style="font-size: 8px;">(Click to Open)</span></h3>
+            <ul>
+                <li>
+                    <span class="text"><a href="https://weddingocassion.netlify.app" target="_blank"><h3 style="color: rgb(68, 8, 247);">Wedding Website</h3></a></span>
+                    <span class="percent"></span>
+                    <div style="width: 90%;"></div>
+                </li>
+                <li>
+                    <span class="text"><a href="https://weddingocassion.netlify.app" target="_blank"><h3 style="color: rgb(68, 8, 247);">Restaurants Site</h3></a></span>
+                    <span class="percent"></span>
+                    <div style="width: 80%;"></div>
+                </li>
+                <li>
+                    <span class="text"><a href="https://dcuprogramming.netlify.app"  target="_blank"><h3 style="color: rgb(81, 22, 218);">Coding Website</h3></a></span>
+                    <span class="percent"></span>
+                    <div style="width: 80%;"></div>
+                </li>
+                <li>
+                    <span class="text"><a href="musizapp.netlify.app" target="_blank"><h3 style="color: rgb(81, 22, 218);">Music App</h3></a></span>
+                    <span class="percent"></span>
+                    <div style="width: 80%;"></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contactInfo language" style="margin-bottom: 10%;">
+            <!-- <h3 class="title">Certificates<span style="font-size: 8px;">(Click to Open)</span></h3> -->
+            <!-- <a href="assets/gallery/Resume.pdf" download="Resume"  target="_blank"><img src="assets/gallery/certificate.png" style="font-size: 40px; color: #faf9f9;cursor: pointer; width: 50px;" title="Click Here To Downlod CV"><span style="font-size: 15px; margin-left: 10px;">Downlod CV</span></i></a> -->
+        </div>
+    </div>
+        <div class="right_Side">
+            <div class="about">
+                <h2 class="title2">Profile</h2>
+                <p>Full Stack Developer adept in Working in both Front-end and Back-end development Processes.
+                    A Skilled Full Stack Java Developer proficient in  <b>HTML,CSS,JavaScript,React,C,C++,Data Structure and Algorithms(DSA) with Java and Microsoft SQL Server.
+                    Competitve Coding On (Code Chef).</b> Seeking an opportunity to apply the skills and knowledge while continuing to learn and grow in this dynamic field.
+
+                </p>
+            </div>
+            <div class="about">
+                <h2 class="title2">Experience</h2>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2021 - 2023</h5>
+                        <h5>Freshers</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Web Developer</h4>
+                        <p>Enthusiastic web developer with 1.5yr of coding experience in HTML,CSS,React,Java and various backend technologies.Problem-solving mindset  <br> and collaborative spirit.Eager to leverage skills and experience to build world-class solutions <br>
+                             and achieve organizational goals.</p>
+                     </div>
+                </div>
+                
+                <h2 class="title2">Projects</h2>
+                <div class="box">
+                    <div class="year_company">
+                        <!-- <h5>2021 - 2023</h5> -->
+                        <h5>Websites</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Websites</h4>
+                        <p>Developed and maintained a project website for a client in the education sector, using HTML, CSS,React, JavaScript, and Bootstrap.
+                            In Website also use(API) website are on fully on React and Resposive Design For all Devieces.
+                        </p>
+                     </div>
+                </div>
+            </div>
+                    <div class="about skills">
+                        <h2 class="title2">languages</h2>
+                        <div class="box">
+                            <h4>Html</h4>
+                            <div class="percent">
+                            <div style="width:95%;"></div>
+                        </div>
+
+                    </div>
+                        <div class="box">
+                            <h4>CSS</h4>
+                            <div class="percent">
+                            <div style="width: 70%;"></div>
+                            </div>
+                        </div>
+            
+                    <div class="box">
+                        <h4>JAVASCRIPT</h4>
+                        <div class="percent">
+                        <div style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <h4>REACT</h4>
+                        <div class="percent">
+                        <div style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="box">
+                        <h4>JAVA</h4>
+                        <div class="percent">
+                        <div style="width: 95%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <h4>C,C++</h4>
+                        <div class="percent">
+                        <div style="width:75%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="About interest" style="margin-top: 5%;">
+                <h2 class="title2">Interest</h2>
+                <ul>
+                    <li><i class="fa fa-bar-chart" aria-hidden="true"></i>Music</li>
+                    <li><i class="fa fa-laptop" aria-hidden="true"></i>Developing</li>
+                    <li><i class="fa fa-gamepad" aria-hidden="true"></i>Gaming</li>
+                    <li><i class="fa fa-briefcase" aria-hidden="true"></i>Business</li>
+                </ul>
+            </div>
+                 <a href="Image/C.V.pdf" download="Resume"  target="_blank"><i class="fa fa-download" aria-hidden="true" style="font-size: 40px; color: #620305; margin-top: 8%; cursor: pointer;" title="Click Here To Downlod CV"><span style="font-size: 15px; margin-left: 10px;">Downlod CV</span></i></a>
+                 <a href="Image/Massai.pdf" target="_blank" style="text-decoration: none;"><img src="Image/certificate.png" style="font-size: 40px;cursor: pointer; width: 50px;margin-left: 30%;margin-bottom: -2%;" title="Show Certificates"></a><a href="Image/Massai.pdf" target="_blank" style="text-decoration: none;"><span style="font-size: 15px; margin-left: 10px; color: #620305;padding-bottom: 5%;">Show Certificates</span></a>
+            </div>
+        </div>
+        
+    </body>
+</html>
